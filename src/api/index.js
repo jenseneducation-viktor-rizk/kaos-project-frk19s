@@ -14,17 +14,10 @@ async function fetchEvents() {
       }
 }
 
-async function addNewEvent() {
+async function addNewEvent(newEventObject) {
     try {
         const res = await api.post('/',
-            {     
-                name: empty, 
-                where: empty, 
-                date: empty, 
-                timefrom: empty, 
-                timeTo: empty, 
-                Price: empty
-            })
+            {newEventObject})
         const data = res.data.events;
         return data
     } catch (error) {
@@ -32,10 +25,10 @@ async function addNewEvent() {
       }
 }
 
-async function boughtTicket() {
+async function boughtTicket(boughTicket) {
     try {
         const res = await api.post('/incrementTicket',
-            { increment: ticket })
+            { boughTicket })
 
         const data = res.data.events;
         return data
