@@ -16,6 +16,7 @@ export default {
 
 <style lang="scss" scoped>
     #tickets {
+        box-sizing: border-box;
         display: flex;
         justify-content: center;
         align-items: center;
