@@ -1,0 +1,22 @@
+/* TYPOGRAPHY */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sansita:ital,wght@1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500;700&display=swap");
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Fira Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin: 2rem 0 0 0;
+  font-family: "Sansita", sans-serif;
+}
+
+p {
+  line-height: 150%;
+}

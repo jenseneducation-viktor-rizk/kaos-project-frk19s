@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Tickets from '../views/Tickets.vue'
 
 Vue.use(VueRouter)
 
@@ -19,9 +20,16 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+
+    path: '/tickets',
+    name: 'Tickets',
+    component: Tickets
+  },
+  {
     path:'/Buy',
     name:'Buy',
     component:()=>import('../views/Buy.vue')
+
   }
 ]
 
