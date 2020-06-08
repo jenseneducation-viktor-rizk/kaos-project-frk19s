@@ -1,28 +1,76 @@
 {
-    "events": [
+  "events": [
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": [
         {
-            "id": 1,
-            "name": "Lasse-Stefanz",
-            "price": 350,
-            "location": "Kjell Härnwvistsalen",
-            "date": [
-              {
-                  "month": "MAR",
-                  "day": "29",
-                  "time": [
-                      {
-                          "start": "19.00",
-                          "end": "21.00"
-                      }
-                  ]
-              }  
-            ],
-            "tickets": [
-                {
-                    "total": 300,
-                    "sold": 125
-                }
-            ]
+          "month": "MAR",
+          "day": "29",
+          "time": [
+            {
+              "start": "19.00",
+              "end": "21.00"
+            }
+          ]
         }
-    ]
+      ],
+      "tickets": [
+        {
+          "total": 300,
+          "sold": 125
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "concert",
+      "price": 300,
+      "location": "here",
+      "date": [
+        {
+          "month": "MAR",
+          "day": "20",
+          "time": [
+            {
+              "start": "13.00",
+              "end": "15:00"
+            }
+          ]
+        }
+      ],
+      "tickets": [
+        {
+          "total": 300,
+          "sold": 0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "concert",
+      "price": 300,
+      "location": "here",
+      "date": [
+        {
+          "month": "MAR",
+          "day": "20",
+          "time": [
+            {
+              "start": "13.00",
+              "end": "15:00"
+            }
+          ]
+        }
+      ],
+      "tickets": [
+        {
+          "total": 300,
+          "sold": 0
+        }
+      ]
+    }
+  ]
 }
