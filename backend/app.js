@@ -7,10 +7,6 @@ app.use(cors())
 app.use(express.json())
 
 
+
 app.listen(port, () => 
 console.log(`Creating server on port: ${port}`));
-
-
-app.use((req, res,) =>{
-    res.status(404).send("404 site does not exist");
-});
