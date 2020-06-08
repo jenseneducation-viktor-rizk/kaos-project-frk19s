@@ -18,9 +18,12 @@ async function fetchEvents() {
 
 
 async function addNewEvent({newEventObject}) {
+    const { v4: uuidv4 } = require('uuid');
+    const id = uuidv4();
+    const event = newEventObject.push(`id: ${id}`)
+
     try {
-        const res = await api.post('/',
-            {newEventObject})
+        const res = await api.post('/',{event})
         const data = res.data.events;
         return data
     } catch (error) {
@@ -40,15 +43,14 @@ async function boughtTicket(boughTicket) {
       }
 }
 
-
 async function fetchNewId(){
     try {
         const res = await api.get('/uuid')
-        const data = res.notwrittenyet.notwrittenyet
-        return data
+        
+        return res
     } catch (error) {
-        console.log(error, 'error getting uuid')
-    }
+            console.log(error, 'error getting uuid')
+        }
 }
 
 export {fetchEvents, addNewEvent, boughtTicket, fetchNewId}
