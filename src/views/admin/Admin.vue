@@ -1,7 +1,10 @@
 <template>
   <div id="admin">
-    <Events />
-    <Form />
+    <img class="logo" src="@/assets/logologo.png" alt="" />
+    <div class="admin-wrap">
+      <Events />
+      <Form />
+    </div>
   </div>
 </template>
 
@@ -23,5 +26,17 @@ export default {
 
 #admin {
   background-color: $purple;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin: 24px auto auto 24px;
+}
+
+.admin-wrap {
+  display: flex;
+  margin: 80px;
+  justify-content: space-around;
 }
 </style>
