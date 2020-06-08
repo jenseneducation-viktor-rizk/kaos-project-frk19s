@@ -94,8 +94,6 @@ export default {
   .book {
     width:60%;
     height: 60px;
-    left: 33px;
-    top: 573px;
     background: #37aeab;
     border-radius: 3px;
     border: none;
