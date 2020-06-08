@@ -7,42 +7,39 @@ const adapter = new FileSync("db.json");
 const db = low(adapter);
 
 router.get("/", async (req, res) => {
-    const events = fs.createReadStream("db.json");
-    events.pipe(res)
+  const events = fs.createReadStream("db.json");
+  events.pipe(res);
 });
 
 router.post("/", async (req, res) => {
-    db.get("events")
-        .push(
+  db.get("events")
+    .push({
+      id: req.body.id,
+      name: req.body.name,
+      price: req.body.price,
+      location: req.body.location,
+      date: [
+        {
+          month: req.body.month,
+          day: req.body.day,
+          time: [
             {
-                id: req.body.id,
-                name: req.body.name,
-                price: req.body.price,
-                location: req.body.location,
-                date: [
-                  {
-                      month: req.body.month,
-                      day: req.body.day,
-                      time: [
-                          {
-                              start: req.body.start,
-                              end: req.body.end
-                          }
-                      ]
-                  }  
-                ],
-                tickets: [
-                    {
-                        total: req.body.total,
-                        sold: 0
-                    }
-                ]
-            }
-        )
-        .write();
-        
-        res.send(req.body);
-         
-})
+              start: req.body.start,
+              end: req.body.end,
+            },
+          ],
+        },
+      ],
+      tickets: [
+        {
+          total: req.body.total,
+          sold: 0,
+        },
+      ],
+    })
+    .write();
 
-module.exports = router; 
+  res.send(req.body);
+});
+
+module.exports = router;
