@@ -1,8 +1,10 @@
 import axios from "axios";
 
+
 const api = axios.create({
     baseURL: "https://localhost:9999/api"
 });
+
 
 async function fetchEvents() {
     try {
@@ -14,7 +16,8 @@ async function fetchEvents() {
       }
 }
 
-async function addNewEvent(newEventObject) {
+
+async function addNewEvent({newEventObject}) {
     try {
         const res = await api.post('/',
             {newEventObject})
@@ -25,11 +28,11 @@ async function addNewEvent(newEventObject) {
       }
 }
 
+
 async function boughtTicket(boughTicket) {
     try {
         const res = await api.post('/incrementTicket',
-            { boughTicket })
-
+            {boughTicket})
         const data = res.data.events;
         return data
     } catch (error) {
@@ -37,4 +40,15 @@ async function boughtTicket(boughTicket) {
       }
 }
 
-export {fetchEvents, addNewEvent, boughtTicket}
+
+async function fetchNewId(){
+    try {
+        const res = await api.get('/uuid')
+        const data = res.notwrittenyet.notwrittenyet
+        return data
+    } catch (error) {
+        console.log(error, 'error getting uuid')
+    }
+}
+
+export {fetchEvents, addNewEvent, boughtTicket, fetchNewId}
