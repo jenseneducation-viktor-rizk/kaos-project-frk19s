@@ -1,21 +1,20 @@
 <template>
-  <main class="wrapper">
+<main>
+  <div class="wrapper">
     <div class="date box">
       <p>21</p>
       <p> Apr </p>
     </div>
-
     <div class="artist-details">
       <h2>Klubb Untz</h2>
       <p class="location">Location</p>
-      <p>
+      <p class="time">
         22 - 08
-        <span>150sek</span>
       </p>
+      <p class="price">110 sek</p>
     </div>
-
-   
-  </main>
+  </div>
+</main>
 </template>
 
 <script>
@@ -59,8 +58,18 @@ export default {
     flex-direction: column;    
 }
 
+.price {
+    align-items: flex-end;
+    text-align: right;
+    color: #37AEAB;
+    font-size: 1.2em;
+    display: inline;
+}
 
-
+.time {
+    display: inline;
+    margin-right: 50%;
+}
 
 
 </style>

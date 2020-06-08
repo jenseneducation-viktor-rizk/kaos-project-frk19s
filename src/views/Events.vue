@@ -1,6 +1,6 @@
 <template>
   <div class="events">
-    <h1> EVENTS </h1>
+    <h1> Events </h1>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 <EventDetails />
   </div>
@@ -9,7 +9,6 @@
 <script>
 // @ is an alias to /src
 import EventDetails from '@/components/EventDetails.vue'
-
 export default {
   name: 'Events',
   components: {
@@ -19,12 +18,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 body, html, :root {
     padding:0;
     margin:0;
 }
-
 
 .events {
     height: 100vh;
