@@ -6,41 +6,42 @@
     </h3>
 
     <div class="midden">
-      <h1>{{name}}</h1>
+      <h1>{{event.name}}</h1>
       <h3>{{time}}</h3>
-      <span>@ {{location}}</span>
+      <span>@ {{event.location}}</span>
     </div>
 
-    <div class="price">{{price}}sek</div>
+    <div class="price">{{event.price}}sek</div>
     <button class="book">Beställ</button>
   </div>
 </template>
 
 <script>
 export default {
-    data:()=>({
-        name:'Lasse-Stefanz',
-        time:'21 mars kl 19.00-21.00',
-        location:'Kjell Härnqvistsalen',
-        price:"350"
-
-
-
-    })
+    computed:{
+      event(){
+        return this.$store.state.event
+      },
+      time() {
+        let json = this.$store.state.event.date[0]
+        let day = json.day
+        let month = json.month
+        let start = json.time[0].start
+        let end = json.time[0].end 
+         return `${day} ${month} kl ${start} - ${end}`
+      }
+    }
 };
 </script>
 
-<style lang=scss scoped>
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;1,200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;1,800&display=swap");
+<style lang="scss" scoped>
+@import "../scss/variables";
 .container {
   max-width: 900px;
   height: 667px;
-  
   margin: auto;
   .top {
     margin-top: 80px;
-
     font-family: "Fira Sans";
     font-style: italic;
     font-size: 19px;
@@ -55,8 +56,8 @@ export default {
     line-height: 38px;
     text-align: center;
     margin: 150px 0 150px 0;
-    color: #ffffff;
-    text-shadow: 1px 1px 0px #f56b9a;
+    color: $white;
+    text-shadow: 1px 1px 0px $pink;
   }
   
   .midden {
@@ -70,8 +71,8 @@ export default {
       font-weight: bold;
       font-size: 35px;
       line-height: 41px;
-      color: #f56b9a;
-      margin: 0;
+      color: $pink;
+      margin:50px 0 0 0;
     }
     span {
       font-family: "Fira Sans";
@@ -79,6 +80,7 @@ export default {
       font-weight: normal;
       font-size: 16px;
       line-height: 19px;
+      margin-top:10px;
       color: rgba(255, 255, 255, 0.7);
     }
     h3 {
@@ -87,18 +89,18 @@ export default {
       font-weight: bold;
       font-size: 19px;
       line-height: 23px;
-      margin-top: 10px;
-      color: #37aeab;
+      margin: 22px 0 0 0;
+      color:$green;
     }
   }
   .book {
     width:60%;
     height: 60px;
-    background: #37aeab;
+    background:$green;
     border-radius: 3px;
     border: none;
     outline: none;
-    color: #ffffff;
+    color:$white;
     font-weight: 600;
     font-size: 22px;
   }
