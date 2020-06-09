@@ -10,14 +10,14 @@ async function fetchEvents() {
   try {
     const res = await api.get("/events");
     const data = res.data.events;
-    // console.log(data)
+    console.log(data)
     return data;
   } catch (error) {
     console.log(error, "error in fetching Event");
     }
 }
 
-// fetchEvents()
+fetchEvents()
 
 
 async function addNewEvent( newEventObject ) {
@@ -49,16 +49,19 @@ async function addNewEvent( newEventObject ) {
 //   sold: 0
 // })
 
-async function boughtTicket(boughTicket) {
-  try {
-    const res = await api.post("/incrementTicket", { boughTicket });
 
-    const data = res.data.events;
-    return data;
+// **** skicka med id för det event du vill köpa biljett för.
+// I backend söks id upp och incrementar tickets
+async function boughtTicket(id) {
+  console.log(typeof id, "id")
+  try {
+    return await api.post("/incrementTicket", id);
+
   } catch (error) {
     console.log(error, "error in post bought ticket");
   }
 }
+boughtTicket({hej: "test"})
  
 // Exporterar samtliga functioner som kommunicerar med backend. Ta emot i store
 export { fetchEvents, addNewEvent, boughtTicket };

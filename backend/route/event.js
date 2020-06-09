@@ -43,4 +43,24 @@ router.post("/", async (req, res) => {
   res.send(req.body);
 });
 
+
+// Frontend post fungerar inte. Denna kod måste också ändras en hel del!
+router.post("/incrementTicket", async (req, res) => {
+  console.log(req.body, "increment")
+  bodyId = req.body 
+
+  idOfEvent = db.get("events")
+  .find({id:bodyId})
+  .value
+
+  ticketQuantity = idOfEvent.id +1
+
+  idOfEvent = db.get("events")
+  .find({id:bodyId})
+  .assign({sold: itemQuantity})
+  .write()
+
+  res.send(req.body);
+});
+
 module.exports = router;
