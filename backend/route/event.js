@@ -12,6 +12,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  console.log(req.body, "object from Frontend")
   db.get("events")
     .push({
       id: req.body.id,
