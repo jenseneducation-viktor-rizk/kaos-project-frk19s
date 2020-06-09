@@ -6,19 +6,19 @@
           v-for="event in eventList"
           v-bind:key="event.id"
           style="font-weight:bold;"
-        >{{event.namn}}</li>
+        >{{event.name}}</li>
       </ul>
       <ul id="var">
         <h4>Var</h4>
-        <li v-for="event in eventList" v-bind:key="event.id">{{event.var}}</li>
+        <li v-for="event in eventList" v-bind:key="event.id">{{event.location}}</li>
       </ul>
       <ul id="platser">
         <h4>Antal Platser</h4>
-        <li v-for="event in eventList" v-bind:key="event.id">{{event.platser}}</li>
+        <li v-for="event in eventList" v-bind:key="event.id">{{event.tickets.total}}</li>
       </ul>
       <ul id="såld">
         <h4>Sålda Biljetter</h4>
-        <li v-for="event in eventList" v-bind:key="event.id">{{event.såld}}</li>
+        <li v-for="event in eventList" v-bind:key="event.id">{{event.tickets.sold}}</li>
       </ul>
     </section>
 </template>
@@ -26,38 +26,46 @@
 <script>
 export default {
   name: "Events",
+  mounted() {
+    this.$store.dispatch("getEvents");
+  },
+  computed: {
+    eventList() {
+      return this.$store.state.events;
+    }
+  },
   data() {
     return {
-      eventList: [
-        {
-          id: 0,
-          namn: "Lasse Stefanz",
-          var: "Kjell Härnqvist salen",
-          platser: 300,
-          såld: 125
-        },
-        {
-          id: 1,
-          namn: "Pelle Trubadur",
-          var: "Pubelipubben",
-          platser: 100,
-          såld: 19
-        },
-        {
-          id: 2,
-          namn: "Kajsas Kör",
-          var: "Götaplatsen",
-          platser: 10000,
-          såld: 3454
-        },
-        {
-          id: 3,
-          namn: "Klubb Untz",
-          var: "Din favoritkällare",
-          platser: 120,
-          såld: 77
-        }
-      ]
+      // eventList: [
+      //   {
+      //     id: 0,
+      //     namn: "Lasse Stefanz",
+      //     var: "Kjell Härnqvist salen",
+      //     platser: 300,
+      //     såld: 125
+      //   },
+      //   {
+      //     id: 1,
+      //     namn: "Pelle Trubadur",
+      //     var: "Pubelipubben",
+      //     platser: 100,
+      //     såld: 19
+      //   },
+      //   {
+      //     id: 2,
+      //     namn: "Kajsas Kör",
+      //     var: "Götaplatsen",
+      //     platser: 10000,
+      //     såld: 3454
+      //   },
+      //   {
+      //     id: 3,
+      //     namn: "Klubb Untz",
+      //     var: "Din favoritkällare",
+      //     platser: 120,
+      //     såld: 77
+      //   }
+      // ]
     };
   },
 };

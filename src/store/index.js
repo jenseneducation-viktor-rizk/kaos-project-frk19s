@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import * as API from "@/api/index.js";
 
 Vue.use(Vuex);
 
@@ -19,8 +20,20 @@ export default new Vuex.Store({
         number: "789GHI",
       },
     ],
+    events:[],
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    getEvents(state, data) {
+      state.events = data;
+    },
+  },
+  actions: {
+    async getEvents(context) {
+      const data = await API.fetchEvents();
+      console.log(data);
+        context.commit("getEvents", data);
+    
+    },
+  },
   modules: {},
 });
