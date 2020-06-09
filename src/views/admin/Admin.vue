@@ -1,6 +1,6 @@
 <template>
   <div id="admin">
-    <img class="logo" src="@/assets/logologo.png" alt="" />
+    <img class="admin-logo" src="@/assets/logologo.png" alt="" />
     <div class="admin-wrap">
       <Events />
       <Form />
@@ -30,7 +30,7 @@ export default {
   flex-direction: column;
 }
 
-.logo {
+.admin-logo {
   margin: 24px auto auto 24px;
 }
 

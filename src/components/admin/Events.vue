@@ -1,5 +1,4 @@
 <template>
-  <div>
     <section class="container">
       <ul id="name">
         <h4>Namn</h4>
@@ -22,7 +21,6 @@
         <li v-for="event in eventList" v-bind:key="event.id">{{event.såld}}</li>
       </ul>
     </section>
-  </div>
 </template>
 
 <script>
@@ -61,31 +59,49 @@ export default {
         }
       ]
     };
-  }
+  },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/scss/_variables.scss";
+
 .container {
   background-color: #19162e;
   display: flex;
   justify-content: center;
-  align-items: center;
+  text-align: left;
+  margin-right: 24px;
+  width: 60%;
 }
 
 h4 {
-  color: #f56b9a;
+  color: $pink;
   font-weight: bold;
   align-self: flex-start;
+  margin: 0 0 20px;
 }
 ul {
   width: 100%;
   list-style-type: none;
+  padding-inline-start: 16px;
+  padding-inline-end: 16px;
 }
 
 li {
   color: #fff;
-  border: 5px solid red;
+  margin-bottom: 20px;
+
   /* width: 100%; */
 }
-</style>>
+
+#name {
+  width: 30%;
+}
+
+#var,
+#platser,
+#såld {
+  width: auto;
+}
+</style>
