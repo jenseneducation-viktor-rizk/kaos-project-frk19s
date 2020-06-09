@@ -6,12 +6,12 @@ const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync("db.json");
 const db = low(adapter);
 
-router.get("/", async (req, res) => {
+router.get("/events", async (req, res) => {
   const events = fs.createReadStream("db.json");
   events.pipe(res);
 });
 
-router.post("/", async (req, res) => {
+router.post("/admin", async (req, res) => {
   console.log(req.body, "object from Frontend")
   db.get("events")
     .push({
@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
 
 
 // Frontend post fungerar inte. Denna kod måste också ändras en hel del!
-router.post("/incrementTicket", async (req, res) => {
+router.post("/buy", async (req, res) => {
   console.log(req.body, "increment")
   bodyId = req.body 
 
