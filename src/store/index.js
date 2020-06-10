@@ -6,25 +6,24 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    biljettNr: [
-      {
-        id: 1,
-        number: "123ABC",
-      },
-      {
-        id: 2,
-        number: "456DEF",
-      },
-      {
-        id: 3,
-        number: "789GHI",
-      },
-    ],
+    event: {},
     events: [],
+    boughtTicket: {},
+    ticketVerify: null,
   },
   mutations: {
     getEvents(state, data) {
       state.events = data;
+    },
+    changeEvent(state, event) {
+      state.event = event;
+    },
+    changeBoughtTicket(state, event) {
+      state.boughtTicket = event;
+    },
+    verify(state, data) {
+      state.ticketVerify = data;
+      //console.log(data);
     },
   },
   actions: {
@@ -40,6 +39,16 @@ export default new Vuex.Store({
       } catch (err) {
         console.error(err);
       }
+    },
+    async buyTicket(context, event) {
+      const data = await API.buyTicket(event);
+      // console.log(data)
+      context.commit("changeBoughtTicket", data);
+    },
+    async getTicket(context, ticketNr) {
+      const data = await API.verifyTicket(ticketNr);
+      //console.log(data);
+      context.commit("verify", data);
     },
   },
   modules: {},
