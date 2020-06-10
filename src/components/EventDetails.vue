@@ -2,30 +2,35 @@
 <main>
   <div class="wrapper">
     <div class="date box">
-      <p>21</p>
-      <p> Apr </p>
+      <p>{{date.day}}</p>
+      <p> {{date.month}} </p>
     </div>
     <div class="artist-details">
-      <h2>Klubb Untz</h2>
-      <p class="location">Location</p>
+      <h2>{{artist}}</h2>
+      <p class="location">{{location}}</p>
       <p class="time">
         22 - 08
       </p>
-      <p class="price">110 sek</p>
+      <p class="price">{{price}}</p>
     </div>
   </div>
 </main>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: "EventDetails",
   components: {
     // HelloWorld
-  }
+  },
+  data(){ 
+    return {
+    artist: "Untz Untz",
+    location: "Your fav basement",
+    time: "22-08",
+    date: {month: "Apr", day: "21"},
+    price: "110 sek",
+}}
 };
 </script>
 
@@ -39,14 +44,13 @@ export default {
 
   div {
     margin: 10px;
-    // background-color: hotpink;
   }
 }
 
 .artist-details {
     padding: 2%;
     width: 70%;
-    border-bottom: solid 1px #fff;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.3);
 }
 
 .box {
@@ -68,7 +72,14 @@ export default {
 
 .time {
     display: inline;
-    margin-right: 50%;
+    margin-right: 48%;
+    font-size: 1em;
+}
+
+.location {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: normal;
 }
 
 
