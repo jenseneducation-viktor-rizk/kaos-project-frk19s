@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Tickets from '../views/Tickets.vue'
+import Events from '../views/Events.vue'
 
 Vue.use(VueRouter)
 
@@ -11,6 +12,13 @@ Vue.use(VueRouter)
     name: 'Home',
     component: Home
   },
+
+  {
+    path: '/events',
+    name: 'Events',
+    component: Events
+  },
+
   {
     path: '/about',
     name: 'About',
