@@ -1,0 +1,8 @@
+@import "./typography";
+@import "./layout";
+@import "./variables";
+
+body {
+  margin: 0 1rem;
+  background: $purple;
+}
