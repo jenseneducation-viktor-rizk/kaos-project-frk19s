@@ -2,17 +2,31 @@
   <div class="events">
     <h1> Events </h1>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-<EventDetails />
+<EventDetails v-for="event in events" :event="event" :key="event.id"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import EventDetails from '@/components/EventDetails.vue'
+import EventDetails from '@/components/EventDetails.vue';
+import { mapActions } from "vuex"
+
 export default {
   name: 'Events',
   components: {
      EventDetails
+  },
+  methods: {
+    ...mapActions(["getEvents"])
+  },
+  computed:{
+      events(){
+          return this.$store.state.events;
+      }
+  },
+  created(){
+    this.getEvents()
+    
   }
 }
 </script>
