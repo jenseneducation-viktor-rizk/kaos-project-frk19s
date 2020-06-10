@@ -5,24 +5,72 @@
       "name": "Lasse-Stefanz",
       "price": 350,
       "location": "Kjell Härnwvistsalen",
-      "date": [
-        {
-          "month": "MAR",
-          "day": "29",
-          "time": [
-            {
-              "start": "19.00",
-              "end": "21.00"
-            }
-          ]
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
         }
-      ],
-      "tickets": [
-        {
-          "total": 300,
-          "sold": 125
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      }
+    },
+    {
+      "id": 2,
+      "name": "Pelle Trubadur",
+      "price": 110,
+      "location": "Pubelipuben",
+      "date": {
+        "month": "MAR",
+        "day": "29",
+        "time": {
+          "start": "22.00",
+          "end": "00.00"
         }
-      ]
+      },
+      "tickets": {
+        "total": 100,
+        "sold": 19
+      }
+    },
+    {
+      "id": 3,
+      "name": "Kajsas kör",
+      "price": 99,
+      "location": "Götaplatsen",
+      "date": {
+        "month": "APR",
+        "day": "10",
+        "time": {
+          "start": "15.00",
+          "end": "16.00"
+        }
+      },
+      "tickets": {
+        "total": 10000,
+        "sold": 3454
+      }
+    },
+    {
+      "id": 4,
+      "name": "Klubb Untz",
+      "price": 150,
+      "location": "Din favoritkällare",
+      "date": {
+        "month": "APR",
+        "day": "17",
+        "time": {
+          "start": "22.00",
+          "end": "du tröttnar"
+        }
+      },
+      "tickets": {
+        "total": 120,
+        "sold": 77
+      }
     }
   ]
 }
