@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="container">
     <h3 class="top">
       You are about to score
       <br />some tickets to
@@ -36,12 +36,17 @@ export default {
 
 <style lang="scss" scoped>
 @import "../scss/variables";
-.container {
-  max-width: 900px;
-  height: 667px;
+#container {
+  border-top: 1px solid $purple;
+  text-align: center;	
+  color: #2c3e50;	
+  box-sizing: border-box;
+  background-color: $purple;
+  height: 100vh;
+  width: 100vw;
   margin: auto;
   .top {
-    margin-top: 80px;
+    margin: 80px 0 0 0;
     font-family: "Fira Sans";
     font-style: italic;
     font-size: 19px;
