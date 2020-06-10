@@ -25,7 +25,6 @@ body, html, :root {
 
 .events {
     height: 100vh;
-    width: 100vw;
 }
 
 h1 {

@@ -40,6 +40,7 @@ export default {
   color: #fff;
   display: flex;
   flex-direction: row;
+  max-width: 475px;
   
 
   div {
@@ -82,5 +83,10 @@ export default {
   font-weight: normal;
 }
 
+ * {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
 
 </style>
