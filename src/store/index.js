@@ -23,9 +23,7 @@ export default new Vuex.Store({
           ]
         }
       ]
-      }
-  },
- 
+      },
     biljettNr: [
       {
         id: 1,
@@ -46,8 +44,9 @@ export default new Vuex.Store({
     getEvents(state, data) {
       state.events = data;
     },
-    changeEvent: (state, event) => state.event = event
-     
+    changeEvent(state, event) {
+      state.event = event;
+    },
   },
   actions: {
     async getEvents(context) {
