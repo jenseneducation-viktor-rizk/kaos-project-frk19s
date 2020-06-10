@@ -12,16 +12,19 @@
     </div>
 
     <div class="price">{{event.price}}sek</div>
-    <button class="book">Beställ</button>
+    <button class="book" @click="goToTickets()">Beställ</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex"
 export default {
     computed:{
       event(){
         return this.$store.state.event
       },
+      
+      
       time() {
         let json = this.$store.state.event.date
         let day = json.day
@@ -30,7 +33,14 @@ export default {
         let end = json.time.end 
          return `${day} ${month} kl ${start} - ${end}`
       }
-    }
+    },
+   methods:{
+        goToTickets(){
+          this.buyTicket(this.event)
+          this.$router.push("/tickets")
+        } ,
+        ...mapActions(["buyTicket"])
+   }
 };
 </script>
 
