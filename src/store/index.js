@@ -39,6 +39,22 @@ export default new Vuex.Store({
       },
     ],
     events:[],
+    boughtTicket: 
+      {
+        ticketNr: "ABC123",
+        id: 1,
+        name: "Lasse-Stefanz",
+        price: 350,
+        location: "Kjell Härnwvistsalen",
+        date: {
+          month: "MAR",
+          day: "21",
+          time: {
+            start: "19.00",
+            end: "21.00"
+          }
+        }
+      }
   },
   mutations: {
     getEvents(state, data) {
