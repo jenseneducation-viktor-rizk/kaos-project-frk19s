@@ -10,7 +10,7 @@ async function fetchEvents() {
   try {
     const res = await api.get("/events");
     const data = res.data.events;
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.log(error, "error in fetching Event");

@@ -39,13 +39,13 @@ export default new Vuex.Store({
   actions: {
     async getEvents(context) {
       const data = await API.fetchEvents();
-      console.log(data);
+      // console.log(data);
         context.commit("getEvents", data);
     
     },
-    async buyTicket(context,event){
+    async buyTicket(context, event){
       const data = await API.buyTicket(event)
-      console.log(data)
+      // console.log(data)
       context.commit("changeBoughtTicket", data)
       
     }

@@ -1,38 +1,39 @@
 <template>
     <div id="ticket">
+        
         <div class="what">
             <label>WHAT</label>
             <h2 class="band-name">
-            {{ this.ticket.name }} 
+            {{ ticket.name }} 
             </h2>
         </div>
         <div class="where">
             <label>WHERE</label>
-            <p class="location"> {{ this.ticket.location }} </p>
+            <p class="location"> {{ ticket.location }} </p>
         </div>
         <div class="info">
             <div class="info-box">
                 <label>WHEN</label>
                 <p class="info-font">
-                    {{ this.ticket.date.day }} {{ this.ticket.date.month }}
+                    {{ ticket.date.day }} {{ ticket.date.month }}
                 </p>
-            </div>
+            </div> 
             <div class="info-box mid">
                 <label>FROM</label>
                 <p class="info-font">
-                    {{ this.ticket.date.time.start }}
+                    {{ ticket.date.time.start }}
                 </p>
             </div>
             <div class="info-box">
                 <label>TO</label>
                 <p class="info-font">
-                    {{ this.ticket.date.time.end }}
+                    {{ ticket.date.time.end }}
                 </p>
             </div>
         </div>
         <div class="barcode">
             <img src="@/assets/A2ED7barcode.png" alt="barcode">
-            <p class="ticket-number"> Biljettnummer: {{this.ticket.ticketNr}} </p>
+            <p class="ticket-number"> Biljettnummer: {{ticket.ticketNr}} </p>
         </div>
     </div>
 </template>
@@ -40,20 +41,23 @@
 <script>
 export default {
 data(){return{
-    bandName: "Lasse Stefanz",
-    userName: "Kjell Kjellsson",
-    date: "21",
-    month: "Mar",
-    from: "19:00",
-    to: "21:00",
-    ticketNumber: "ABC123456",
-
+    // ticket: {}
 }},
 computed: {
     ticket() {
         return this.$store.state.boughtTicket
     }
-}
+},
+// beforeCreate() {
+//    this.getTicket
+// },
+// methods: {
+//     async getTicket() {
+//         this.ticket = await this.$store.state.boughtTicket
+//         console.log("done")
+//     }
+// }
+
 
 }
 
