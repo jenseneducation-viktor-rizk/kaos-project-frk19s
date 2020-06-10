@@ -54,18 +54,24 @@ export default {
 };
 </script>
 
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sansita:ital,wght@1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500;700&display=swap");
+<style lang="scss">
+@import "@/scss/main.scss";
+
+//@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Sansita:ital,wght@1,700;1,800;1,900&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500;700&display=swap");
+body {
+  background: #e5e5e5;
+}
 .Staff {
-  background: #f39440;
+  background: $orange;
   width: 375px;
   height: 667px;
+  margin: auto;
 }
 #verifyBtn {
-  background: #231f42;
-  color: white;
+  background: $purple;
+  color: $white;
 }
 #staff-logo {
   width: 70px;
@@ -74,7 +80,7 @@ export default {
 }
 #staff-text-1 {
   font-size: 20px;
-  font-family: "Sansita", sans-serif;
+  //font-family: "Sansita", sans-serif;
 }
 #staff-text-2 {
   font-size: 22px;
@@ -96,7 +102,7 @@ export default {
   font-weight: 600;
   font-style: normal;
   font-size: 22px;
-  order: solid 2px #231f42;
+  order: solid 2px $purple;
 }
 #staff-input {
   width: 310px;
@@ -105,8 +111,8 @@ export default {
   font-size: 25px;
   letter-spacing: 0.3em;
   font-weight: bold;
-  background: #f39440;
-  border: solid 2px #231f42;
-  color: #090911;
+  background: $orange;
+  border: solid 2px $purple;
+  color: $black;
 }
 </style>
