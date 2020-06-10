@@ -52,8 +52,8 @@ body {
 }
 .Staff {
   background: $orange;
-  width: 375px;
-  height: 667px;
+  width: 100%;
+  height: 100vh;
   margin: auto;
 }
 #verifyBtn {
