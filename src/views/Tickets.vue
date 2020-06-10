@@ -15,17 +15,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import "../scss/variables";
     #tickets {
         box-sizing: border-box;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 10px;
-        padding: 0;
-        max-height: 667px;
-        max-width: 475px;
         height: 100vh;
         width: 100vw;
-        background-color: rgba($color: #542bc7, $alpha: 1.0);
+        background: linear-gradient($pink 0%, $purple 40%);
     }
 </style>

@@ -138,6 +138,7 @@ data(){return{
             flex-direction: column;
             height: 180px;
             width: 100%;
+            background: rgba(0, 0, 0, 0.12);
             img {
                 margin: auto;
             }
