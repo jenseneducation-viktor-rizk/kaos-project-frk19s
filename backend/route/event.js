@@ -61,4 +61,20 @@ router.post("/buy", async (req, res) => {
     
 });
 
+router.post("/staff/verify", async (req, res) => {
+  console.log(req.body)
+
+  let validTicked = eventDb.get("tickets")
+    .find({ ticketNr: req.body.id })
+    .value()
+  
+  console.log(validTicked)
+
+  if(validTicked) {
+    res.send(true)
+  }
+  res.send(false)
+    
+});
+
 module.exports = router;

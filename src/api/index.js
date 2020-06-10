@@ -40,14 +40,30 @@ async function buyTicket(event) {
     const data = res.data
     return data
   } catch (error) {
-    console.log(error, "error in post bought ticket");
+    console.log(error, "error in post buy ticket");
+  }
+}
+
+// Skicka textsräng med biljettnummer
+// ** Returnerar true om biljett finns i databasen och false om den inte finns
+async function verifyTicket(ticketNumber) {
+  let testNr = {
+    id: ticketNumber
+  }
+  try {
+    const res = await api.post("/staff/verify", testNr);
+    const data = res.data
+    console.log(data)
+    return data
+  } catch (error) {
+    console.log(error, "error in veryfying ticket");
   }
 }
 
 //! TO TEST BUYTICKET FUNCTION
-// buyTicket({hej: "test", id: 1, tickets: [
+// buyTicket({hej: "test", id: 1, tickets: 
 //   {sold: 125}
-// ]})
+// })
 
 //! TO TEST ADDNEWEVENT
 // addNewEvent({name: "hej"})
@@ -55,7 +71,10 @@ async function buyTicket(event) {
 //! TO TEST FETCHEVENT
 // fetchEvents();
 
+// !TO TEST VERIFY TICKET
+// verifyTicket("592624a0-3f1a-4499-96a4-d1f5d26ddb47")
+
 
 
 // Exporterar samtliga functioner som kommunicerar med backend. Ta emot i store
-export { fetchEvents, addNewEvent, buyTicket };
+export { fetchEvents, addNewEvent, buyTicket, verifyTicket };
