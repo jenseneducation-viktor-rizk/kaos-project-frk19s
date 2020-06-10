@@ -23,7 +23,7 @@ async function addNewEvent(newEventObject) {
   // Se nedan vad för data som ska inkluderas i newEventObject för att skapa ett nytt event
   newEventObject.id = uuidv4();
   try {
-    return await api.post("admin", newEventObject);
+    return await api.post("/admin", newEventObject);
   } catch (error) {
     console.log(error, "error in posting new event");
   }
