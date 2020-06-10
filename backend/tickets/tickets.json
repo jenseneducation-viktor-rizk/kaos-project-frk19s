@@ -4,32 +4,6 @@
       "hej": "test",
       "id": 1,
       "ticketNr": "592624a0-3f1a-4499-96a4-d1f5d26ddb47"
-    },
-    {
-      "hej": "test",
-      "id": 1,
-      "ticketNr": "1df621e4-e05d-4d19-80da-229b22bac783"
-    },
-    {
-      "hej": "test",
-      "id": 1,
-      "ticketNr": "1df621e4-e05d-4d19-80da-229b22bac783"
-    },
-    {
-      "hej": "test",
-      "id": 1,
-      "tickets": {
-        "sold": 125
-      },
-      "ticketNr": "f1d86c27-cd29-46a9-aa4c-5cee2a5dfe64"
-    },
-    {
-      "hej": "test",
-      "id": 1,
-      "tickets": {
-        "sold": 125
-      },
-      "ticketNr": "5b2b64ac-e6bd-431a-b922-5f96dae89e7b"
     }
   ]
 }
