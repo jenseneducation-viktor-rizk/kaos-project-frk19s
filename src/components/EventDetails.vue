@@ -1,6 +1,6 @@
 <template>
 <main>
-  <div class="wrapper">
+  <div class="wrapper" @click="goToBuy(event)">
     <div class="date box">
       <p>{{date.day}}</p>
       <p> {{date.month}} </p>
@@ -22,7 +22,9 @@ export default {
   name: "EventDetails",
   components: {
     // HelloWorld
+
   },
+  props:['event'],
   data(){ 
     return {
     artist: "Untz Untz",
@@ -30,7 +32,14 @@ export default {
     time: "22-08",
     date: {month: "Apr", day: "21"},
     price: "110 sek",
-}}
+}},
+methods:{
+  goToBuy(event){
+    this.$store.commit('changeEvent',event)
+    this.$router.push("/Buy")
+  }
+
+}
 };
 </script>
 

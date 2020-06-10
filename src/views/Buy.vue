@@ -23,11 +23,11 @@ export default {
         return this.$store.state.event
       },
       time() {
-        let json = this.$store.state.event.date[0]
+        let json = this.$store.state.event.date
         let day = json.day
         let month = json.month
-        let start = json.time[0].start
-        let end = json.time[0].end 
+        let start = json.time.start
+        let end = json.time.end 
          return `${day} ${month} kl ${start} - ${end}`
       }
     }
