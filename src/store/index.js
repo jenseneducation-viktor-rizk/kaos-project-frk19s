@@ -7,23 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
 
-    event: {
-      name: "Lasse-Stefanz",
-      price: 350,
-      location: "Kjell Härnqvistsalen",
-      date: [
-        {
-          month: "MAR",
-          day: "29",
-          time: [
-            {
-              start: "19.00",
-              end: "21.00"
-            }
-          ]
-        }
-      ]
-      },
+    event: {},
     biljettNr: [
       {
         id: 1,
@@ -39,22 +23,7 @@ export default new Vuex.Store({
       },
     ],
     events:[],
-    boughtTicket: 
-      {
-        ticketNr: "ABC123",
-        id: 1,
-        name: "Lasse-Stefanz",
-        price: 350,
-        location: "Kjell Härnwvistsalen",
-        date: {
-          month: "MAR",
-          day: "21",
-          time: {
-            start: "19.00",
-            end: "21.00"
-          }
-        }
-      }
+    boughtTicket: {}
   },
   mutations: {
     getEvents(state, data) {
@@ -63,6 +32,9 @@ export default new Vuex.Store({
     changeEvent(state, event) {
       state.event = event;
     },
+    changeBoughtTicket(state,event){
+      state.boughtTicket = event
+    }
   },
   actions: {
     async getEvents(context) {
@@ -71,7 +43,12 @@ export default new Vuex.Store({
         context.commit("getEvents", data);
     
     },
-
+    async buyTicket(context,event){
+      const data = await API.buyTicket(event)
+      console.log(data)
+      context.commit("changeBoughtTicket", data)
+      
+    }
   },
   modules: {},
 });
