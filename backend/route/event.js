@@ -4,6 +4,8 @@ const fs = require("fs");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync("db.json");
+const adapter2 = new FileSync("tickets/tickets.json")
+const eventDb = low(adapter2)
 const db = low(adapter);
 
 router.get("/events", async (req, res) => {
@@ -19,76 +21,44 @@ router.post("/admin", async (req, res) => {
       name: req.body.name,
       price: req.body.price,
       location: req.body.location,
-      date: [
+      date: 
         {
           month: req.body.month,
           day: req.body.day,
-          time: [
+          time: 
             {
               start: req.body.start,
               end: req.body.end,
             },
-          ],
+          
         },
-      ],
-      tickets: [
+      tickets: 
         {
           total: req.body.total,
           sold: 0,
-        },
-      ],
+        },     
     })
     .write();
 
   res.send(req.body);
 });
 
+// Gen
 // Frontend post fungerar inte. Denna kod måste också ändras en hel del!
 router.post("/buy", async (req, res) => {
-  let order = db
-    .get("event")
-    .push({
-      eventID: req.body.id,
-      ticketNumber: xxx, /// need to determine how to generate ticketcode
-      location: req.body.location,
-      price: req.body.price,
-      date: [
-        {
-          month: req.body.month,
-          day: req.body.day,
-          time: [
-            {
-              start: req.body.start,
-              end: req.body.end,
-            },
-          ],
-        },
-      ],
-    })
-    .write();
-  setTimeout(() => {
-    res.send(order);
-  }, 1000);
-
-  idOfEvent = db
-    .get("events")
-    .find({ id: bodyId })
-    .assign({ sold: itemQuantity })
-    .write();
-  /*  console.log(req.body, "increment");
-  bodyId = req.body;
-
-  idOfEvent = db.get("events").find({ id: bodyId }).value;
-
-  ticketQuantity = idOfEvent.id + 1;
-
-  idOfEvent = db
-    .get("events")
-    .find({ id: bodyId })
-    .assign({ sold: itemQuantity })
+  eventDb.get("tickets")
+    .push(req.body)
     .write();
 
-  res.send(req.body); */
+  db.get("events")
+    .find({ id: req.body.id })
+    .get('tickets')
+    .find('sold')
+    .assign({ sold: req.body.tickets.sold + 1 })
+    .write();
+    
+    res.send(req.body);
+    
 });
 
 module.exports = router;
