@@ -35,8 +35,8 @@ export default {
       }
     },
    methods:{
-        goToTickets(){
-          this.buyTicket(this.event)
+        async goToTickets(){
+          await this.buyTicket(this.event)
           this.$router.push("/tickets")
         } ,
         ...mapActions(["buyTicket"])

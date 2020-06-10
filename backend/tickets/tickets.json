@@ -99,6 +99,310 @@
         "sold": 3454
       },
       "ticketNr": "db0e8dd2-d728-4bd9-b6e2-8c2f18b3697b"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "f56ac7c7-928a-4a00-b724-8f31f1e39e76"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "6532cbf9-55e9-458e-8b91-7560832d6899"
+    },
+    {
+      "id": 4,
+      "name": "Klubb Untz",
+      "price": 150,
+      "location": "Din favoritkällare",
+      "date": {
+        "month": "APR",
+        "day": "17",
+        "time": {
+          "start": "22.00",
+          "end": "du tröttnar"
+        }
+      },
+      "tickets": {
+        "total": 120,
+        "sold": 77
+      },
+      "ticketNr": "7f454ccf-4b5d-4aa5-97ac-96511ec631f8"
+    },
+    {
+      "id": 3,
+      "name": "Kajsas kör",
+      "price": 99,
+      "location": "Götaplatsen",
+      "date": {
+        "month": "APR",
+        "day": "10",
+        "time": {
+          "start": "15.00",
+          "end": "16.00"
+        }
+      },
+      "tickets": {
+        "total": 10000,
+        "sold": 3454
+      },
+      "ticketNr": "79d47241-3f0b-4b16-8208-258109763d3e"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "c3b12d39-b244-49c7-b065-3e06d852375c"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "f60238a8-eb98-47f9-81c1-ca8948951c89"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "437b8598-8ee0-4bec-86e8-412997c74b58"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "846df878-f0ff-4106-ac73-4a17f850cb70"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "dfcca1c7-6faf-4975-b70a-a2079014353d"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "3295ad20-ef84-4109-9a9a-cf2e911a12c6"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "c5599cc0-dc4c-45dd-bef8-262c5ed2ff66"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "a392725a-bbc5-4985-a288-0a16f5ea7df4"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "71c3c9e8-819b-43fe-862c-a7b7742e6202"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "83191040-226e-450f-980f-568c8a2ae925"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "6b29d9bb-ef8e-4c69-9098-a4748560d3ce"
+    },
+    {
+      "id": 4,
+      "name": "Klubb Untz",
+      "price": 150,
+      "location": "Din favoritkällare",
+      "date": {
+        "month": "APR",
+        "day": "17",
+        "time": {
+          "start": "22.00",
+          "end": "du tröttnar"
+        }
+      },
+      "tickets": {
+        "total": 120,
+        "sold": 77
+      },
+      "ticketNr": "27b80d9f-cc3c-482e-8dad-86be209bab87"
     }
   ]
 }
