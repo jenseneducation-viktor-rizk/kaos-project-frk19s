@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="form-wrapper">
     <div class="form">
       <h2>Add Event</h2>
 
@@ -51,7 +51,7 @@
         />
       </div>
 
-      <button>Add the Event</button>
+      <button>Add the event</button>
     </div>
   </div>
 </template>
@@ -99,27 +99,36 @@ export default {
 @import "@/scss/_variables.scss";
 @import "@/scss/_typography";
 
-.wrapper {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background: $purple;
-  height: 100vh;
+.form-wrapper {
+  background: $darkPurple;
+  height: 100%;
 
   .form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 50px;
-
+    padding: 16px;
     width: 432px;
-    background: $gray;
+
     h2 {
       color: $pink;
       font-family: Fira Sans;
       font-style: normal;
       font-weight: bold;
+      margin:0 0 10px;
     }
+
+    input{
+      padding: 0 14px;
+      color: white;
+    }
+
+    input::placeholder {
+    color: #a7a7a7;
+    font-weight: 200;
+    font-size: 12px;
+    }
+
     .inputWide {
       display: flex;
       flex-direction: column;
@@ -135,15 +144,16 @@ export default {
       .wide::placeholder {
         font-family: Fira Sans;
         font-style: normal;
-        font-weight: 200;
+        font-weight: 400;
       }
     }
     .inputQuad {
       margin: 0 auto -13px;
+      text-align: left;
 
       .half {
         height: 40px;
-        width: calc(100% / 2 - 16px);
+        width: calc(100% / 2 - 10px);
         background: transparent;
         display: inline-block;
         border: 1px solid rgba(255, 255, 255, 0.7);
@@ -153,20 +163,23 @@ export default {
         &:nth-child(2n) {
           margin-right: 0;
         }
-        .half::placeholder {
+      }
+       .half::placeholder {
           font-family: Fira Sans;
           font-style: normal;
-          font-weight: 200;
+          font-weight: 400;
         }
-      }
     }
     button {
       height: 40px;
-      width: calc(100% / 2 - 16px);
+      width: calc(100% / 2 - 10px);
       background: $pink;
       color: $white;
-      border: 1px solid rgba(255, 255, 255, 0.7);
       border-radius: 3px;
+      border-style: none;
+      margin-top: 16px;
+      font-weight: 600;
+      font-size: 14px;
     }
   }
 }

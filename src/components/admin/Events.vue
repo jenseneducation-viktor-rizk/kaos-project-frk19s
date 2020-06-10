@@ -75,7 +75,7 @@ export default {
 @import "@/scss/_variables.scss";
 
 .container {
-  background-color: #19162e;
+  background-color: $darkPurple;
   display: flex;
   justify-content: flex-start;
   text-align: left;

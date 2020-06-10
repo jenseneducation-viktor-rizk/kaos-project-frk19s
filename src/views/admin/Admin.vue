@@ -37,6 +37,7 @@ export default {
 .admin-wrap {
   display: flex;
   margin: 80px;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: flex-start;
 }
 </style>
