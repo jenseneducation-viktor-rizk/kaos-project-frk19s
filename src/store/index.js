@@ -20,7 +20,7 @@ export default new Vuex.Store({
         number: "789GHI",
       },
     ],
-    events:[],
+    events: [],
   },
   mutations: {
     getEvents(state, data) {
@@ -31,8 +31,15 @@ export default new Vuex.Store({
     async getEvents(context) {
       const data = await API.fetchEvents();
       console.log(data);
-        context.commit("getEvents", data);
-    
+      context.commit("getEvents", data);
+    },
+    async createEvent(data, newEvent) {
+      try {
+        await API.addNewEvent("http://localhost:3000/events", newEvent);
+        data.dispatch("getEvents");
+      } catch (err) {
+        console.error(err);
+      }
     },
   },
   modules: {},
