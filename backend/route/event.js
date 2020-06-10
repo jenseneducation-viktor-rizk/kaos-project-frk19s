@@ -12,7 +12,7 @@ router.get("/events", async (req, res) => {
 });
 
 router.post("/admin", async (req, res) => {
-  console.log(req.body, "object from Frontend")
+  console.log(req.body, "object from Frontend");
   db.get("events")
     .push({
       id: req.body.id,
@@ -43,24 +43,52 @@ router.post("/admin", async (req, res) => {
   res.send(req.body);
 });
 
-
 // Frontend post fungerar inte. Denna kod måste också ändras en hel del!
 router.post("/buy", async (req, res) => {
-  console.log(req.body, "increment")
-  bodyId = req.body 
+  let order = db
+    .get("event")
+    .push({
+      eventID: req.body.id,
+      ticketNumber: xxx, /// need to determine how to generate ticketcode
+      location: req.body.location,
+      price: req.body.price,
+      date: [
+        {
+          month: req.body.month,
+          day: req.body.day,
+          time: [
+            {
+              start: req.body.start,
+              end: req.body.end,
+            },
+          ],
+        },
+      ],
+    })
+    .write();
+  setTimeout(() => {
+    res.send(order);
+  }, 1000);
 
-  idOfEvent = db.get("events")
-  .find({id:bodyId})
-  .value
+  idOfEvent = db
+    .get("events")
+    .find({ id: bodyId })
+    .assign({ sold: itemQuantity })
+    .write();
+  /*  console.log(req.body, "increment");
+  bodyId = req.body;
 
-  ticketQuantity = idOfEvent.id +1
+  idOfEvent = db.get("events").find({ id: bodyId }).value;
 
-  idOfEvent = db.get("events")
-  .find({id:bodyId})
-  .assign({sold: itemQuantity})
-  .write()
+  ticketQuantity = idOfEvent.id + 1;
 
-  res.send(req.body);
+  idOfEvent = db
+    .get("events")
+    .find({ id: bodyId })
+    .assign({ sold: itemQuantity })
+    .write();
+
+  res.send(req.body); */
 });
 
 module.exports = router;

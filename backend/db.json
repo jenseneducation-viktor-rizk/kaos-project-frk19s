@@ -23,30 +23,6 @@
           "sold": 125
         }
       ]
-    },
-    {
-      "id": "8d6719cd-27b8-447c-9eaf-fccaadb4af09",
-      "name": "test",
-      "price": 10,
-      "location": "test",
-      "date": [
-        {
-          "month": "test",
-          "day": "1",
-          "time": [
-            {
-              "start": "19.00",
-              "end": "21.00"
-            }
-          ]
-        }
-      ],
-      "tickets": [
-        {
-          "total": 100,
-          "sold": 0
-        }
-      ]
     }
   ]
 }
