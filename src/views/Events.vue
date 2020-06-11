@@ -3,13 +3,7 @@
     <h1> Events </h1>
 <EventDetails 
 v-for="event in events" :event="event" :key="event.id"
-:location='event.location'
-:price="event.price"
-:artist="event.name"
-:dateDay="event.date.day"
-:dateMonth="event.date.month"
-:timeStart="event.date.time.start"
-:timeEnd="event.date.time.end"
+:events='event'
 />
   </div>
 </template>
