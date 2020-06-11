@@ -41,8 +41,6 @@ body, html, :root {
 
 .events {
     height: 100vh;
-    
-
 }
 
 h1 {
