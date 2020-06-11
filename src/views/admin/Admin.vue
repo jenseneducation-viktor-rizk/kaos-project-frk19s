@@ -40,4 +40,12 @@ export default {
   justify-content: center;
   align-items: flex-start;
 }
+
+@media (max-width: 768px) {
+  .admin-wrap {
+    flex-direction: column;
+    align-items: center;
+    margin: 16px;
+  }
+}
 </style>

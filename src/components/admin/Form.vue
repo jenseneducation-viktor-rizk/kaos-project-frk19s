@@ -199,4 +199,12 @@ export default {
     }
   }
 }
+
+@media (max-width: 768px) {
+  .form-wrapper {
+    .form {
+      width: 100%;
+    }
+  }
+}
 </style>
