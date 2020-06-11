@@ -12,8 +12,8 @@
         v-model="biljettNr"
       />
       <button id="verifyBtn" v-on:click="verify()">Verify ticket</button>
-      <div v-if="verifyStatus!==null">
-        <h1 v-if="verifyStatus">Verified!</h1>
+      <div v-if="verifyResult !== null">
+        <h1 v-if="verifyResult">Verified!</h1>
         <h1 v-else>Not verified</h1>
       </div>
     </div>
@@ -26,47 +26,34 @@ export default {
   data() {
     return {
       biljettNr: "",
-      verifyStatus: null
     };
   },
   methods: {
-    verify() {
-      console.log("starting");
-      if (this.verifyTicket) {
-        this.verifyStatus = true;
-        console.log("true");
-      } else {
-        this.verifyStatus = false;
-        console.log("false");
+    async verify() {
+      if (this.biljettNr !== "") {
+        await this.$store.dispatch("getTicket", this.biljettNr);
       }
-    }
+    },
   },
   computed: {
-    getTicketData() {
-      return this.$store.state.biljettNr;
+    verifyResult() {
+      return this.$store.state.ticketVerify;
     },
-    verifyTicket() {
-      return this.$store.state.biljettNr.find(
-        biljett => biljett.number == this.biljettNr
-      );
-    }
-  }
+  },
 };
 </script>
 
 <style lang="scss">
 @import "@/scss/main.scss";
 
-//@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-//@import url("https://fonts.googleapis.com/css2?family=Sansita:ital,wght@1,700;1,800;1,900&display=swap");
-//@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500;700&display=swap");
 body {
-  background: #e5e5e5;
+  //background: #e5e5e5;
+  margin: auto;
 }
 .Staff {
   background: $orange;
-  width: 375px;
-  height: 667px;
+  width: 100%;
+  height: 100vh;
   margin: auto;
 }
 #verifyBtn {

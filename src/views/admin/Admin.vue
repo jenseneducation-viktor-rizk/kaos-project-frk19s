@@ -37,6 +37,15 @@ export default {
 .admin-wrap {
   display: flex;
   margin: 80px;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .admin-wrap {
+    flex-direction: column;
+    align-items: center;
+    margin: 16px;
+  }
 }
 </style>

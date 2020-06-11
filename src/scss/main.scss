@@ -2,6 +2,10 @@
 @import "./layout";
 @import "./variables";
 
+*{
+  box-sizing: border-box;
+}
+
 html {
   background: $purple;
 }

@@ -1,26 +1,34 @@
 <template>
-    <section class="container">
-      <ul id="name">
-        <h4>NAMN</h4>
-        <li
-          v-for="event in eventList"
-          v-bind:key="event.id"
-          style="font-weight:bold;"
-        >{{event.name}}</li>
-      </ul>
-      <ul id="var">
-        <h4>VAR</h4>
-        <li v-for="event in eventList" v-bind:key="event.id">{{event.location}}</li>
-      </ul>
-      <ul id="platser">
-        <h4>ANTAL PLATSER</h4>
-        <li v-for="event in eventList" v-bind:key="event.id">{{event.tickets.total}}</li>
-      </ul>
-      <ul id="såld">
-        <h4>SÅLDA BILJETTER</h4>
-        <li v-for="event in eventList" v-bind:key="event.id">{{event.tickets.sold}}</li>
-      </ul>
-    </section>
+  <section class="container">
+    <ul id="name">
+      <h4>NAMN</h4>
+      <li
+        v-for="event in eventList"
+        v-bind:key="event.id"
+        style="font-weight:bold;"
+      >
+        {{ event.name }}
+      </li>
+    </ul>
+    <ul id="var">
+      <h4>VAR</h4>
+      <li v-for="event in eventList" v-bind:key="event.id">
+        {{ event.location }}
+      </li>
+    </ul>
+    <ul id="platser">
+      <h4>ANTAL PLATSER</h4>
+      <li v-for="event in eventList" v-bind:key="event.id">
+        {{ event.tickets.total }}
+      </li>
+    </ul>
+    <ul id="såld">
+      <h4>SÅLDA BILJETTER</h4>
+      <li v-for="event in eventList" v-bind:key="event.id">
+        {{ event.tickets.sold }}
+      </li>
+    </ul>
+  </section>
 </template>
 
 <script>
@@ -32,7 +40,7 @@ export default {
   computed: {
     eventList() {
       return this.$store.state.events;
-    }
+    },
   },
   data() {
     return {
@@ -75,7 +83,7 @@ export default {
 @import "@/scss/_variables.scss";
 
 .container {
-  background-color: #19162e;
+  background-color: $darkPurple;
   display: flex;
   justify-content: flex-start;
   text-align: left;
@@ -107,9 +115,9 @@ li {
 #name {
   width: 34%;
 
-    li{
-   font-size: 20px;
-   padding: 2px 0;
+  li {
+    font-size: 20px;
+    padding: 2px 0;
   }
 }
 
@@ -118,9 +126,45 @@ li {
 #såld {
   width: 22%;
 
-  li{
+  li {
     font-size: 13px;
     padding: 6.5px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 16px 0;
+    width: 100%;
+
+    h4 {
+      font-size: 10px;
+    }
+
+    #name {
+      width: 25%;
+      li {
+        font-size: 14px;
+        padding: 2px 0;
+      }
+    }
+
+    #var,
+    #platser,
+    #såld {
+      width: 25%;
+      li {
+        font-size: 10px;
+        padding: 10px 0;
+      }
+    }
+
+    #platser,
+    #såld {
+      li {
+        text-align: right;
+      }
+    }
   }
 }
 </style>
