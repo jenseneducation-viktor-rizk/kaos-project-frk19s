@@ -3,7 +3,6 @@
     <h1> Events </h1>
 <EventDetails 
 v-for="event in events" :event="event" :key="event.id"
-:events='event'
 />
   </div>
 </template>
@@ -24,7 +23,6 @@ export default {
   },
   computed:{
       events(){
-        console.log(this.$store.state.events)
           return this.$store.state.events;
           
       }

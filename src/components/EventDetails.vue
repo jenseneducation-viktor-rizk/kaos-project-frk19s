@@ -2,16 +2,16 @@
 <main>
   <div class="wrapper" @click="goToBuy(event)">
     <div class="date box">
-      <p>{{events.date.day}}</p>
-      <p> {{events.date.month}}</p>
+      <p>{{event.date.day}}</p>
+      <p> {{event.date.month}}</p>
     </div>
     <div class="artist-details">
-      <h2>{{events.name}}</h2>
-      <p class="location">{{events.location}} </p>
+      <h2>{{event.name}}</h2>
+      <p class="location">{{event.location}} </p>
       <p class="time"> 
-        {{events.date.time.start}} - {{events.date.time.end}}
+        {{event.date.time.start}} - {{event.date.time.end}}
       </p>
-      <p class="price">{{events.price}} sek</p>
+      <p class="price">{{event.price}} sek</p>
     </div>
   </div>
 </main>
@@ -20,10 +20,11 @@
 
 export default {
   name: "EventDetails",
-   props:[ 'events'],
+   props:[ 'event'],
    methods:{
   goToBuy(event){
-    this.$store.commit('changeEvent',event)
+    console.log("Event: ", event)
+    this.$store.commit('changeEvent', event)
     this.$router.push("/Buy")
   }}
 };
