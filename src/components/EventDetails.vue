@@ -2,44 +2,31 @@
 <main>
   <div class="wrapper" @click="goToBuy(event)">
     <div class="date box">
-      <p>{{date.day}}</p>
-      <p> {{date.month}} </p>
+      <p>{{event.date.day}}</p>
+      <p> {{event.date.month}}</p>
     </div>
     <div class="artist-details">
-      <h2>{{artist}}</h2>
-      <p class="location">{{location}}</p>
-      <p class="time">
-        22 - 08
+      <h2>{{event.name}}</h2>
+      <p class="location">{{event.location}} </p>
+      <p class="time"> 
+        {{event.date.time.start}} - {{event.date.time.end}}
       </p>
-      <p class="price">{{price}}</p>
+      <p class="price">{{event.price}} sek</p>
     </div>
   </div>
 </main>
 </template>
-
 <script>
+
 export default {
   name: "EventDetails",
-  components: {
-    // HelloWorld
-
-  },
-  props:['event'],
-  data(){ 
-    return {
-    artist: "Untz Untz",
-    location: "Your fav basement",
-    time: "22-08",
-    date: {month: "Apr", day: "21"},
-    price: "110 sek",
-}},
-methods:{
+   props:[ 'event'],
+   methods:{
   goToBuy(event){
-    this.$store.commit('changeEvent',event)
+    console.log("Event: ", event)
+    this.$store.commit('changeEvent', event)
     this.$router.push("/Buy")
-  }
-
-}
+  }}
 };
 </script>
 
@@ -51,7 +38,6 @@ methods:{
   flex-direction: row;
   max-width: 475px;
   
-
   div {
     margin: 10px;
   }
@@ -73,16 +59,15 @@ methods:{
 }
 
 .price {
-    align-items: flex-end;
-    text-align: right;
     color: #37AEAB;
     font-size: 1.2em;
     display: inline;
+    margin-left: 80%;
+    white-space: nowrap;
 }
 
 .time {
     display: inline;
-    margin-right: 48%;
     font-size: 1em;
 }
 

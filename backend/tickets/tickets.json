@@ -403,6 +403,82 @@
         "sold": 77
       },
       "ticketNr": "27b80d9f-cc3c-482e-8dad-86be209bab87"
+    },
+    {
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
+      "date": {
+        "month": "MAR",
+        "day": "21",
+        "time": {
+          "start": "19.00",
+          "end": "21.00"
+        }
+      },
+      "tickets": {
+        "total": 300,
+        "sold": 125
+      },
+      "ticketNr": "d0907805-2e8c-4bec-8969-2232f334603b"
+    },
+    {
+      "id": 2,
+      "name": "Pelle Trubadur",
+      "price": 110,
+      "location": "Pubelipuben",
+      "date": {
+        "month": "MAR",
+        "day": "29",
+        "time": {
+          "start": "22.00",
+          "end": "00.00"
+        }
+      },
+      "tickets": {
+        "total": 100,
+        "sold": 19
+      },
+      "ticketNr": "f1cdf03a-ebc6-4edc-a198-1a9d0629cff2"
+    },
+    {
+      "id": 4,
+      "name": "Klubb Untz",
+      "price": 150,
+      "location": "Din favoritkällare",
+      "date": {
+        "month": "APR",
+        "day": "17",
+        "time": {
+          "start": "22.00",
+          "end": "du tröttnar"
+        }
+      },
+      "tickets": {
+        "total": 120,
+        "sold": 77
+      },
+      "ticketNr": "a2ecd325-e48c-40f0-b4c2-ba1ef51c6d64"
+    },
+    {
+      "id": 2,
+      "name": "Pelle Trubadur",
+      "price": 110,
+      "location": "Pubelipuben",
+      "date": {
+        "month": "MAR",
+        "day": "29",
+        "time": {
+          "start": "22.00",
+          "end": "00.00"
+        }
+      },
+      "tickets": {
+        "total": 100,
+        "sold": 19
+      },
+      "ticketNr": "f0b52239-5b70-48a5-ba6a-a28ad0238869"
     }
   ]
 }
