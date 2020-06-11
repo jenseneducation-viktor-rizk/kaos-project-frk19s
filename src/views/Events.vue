@@ -1,8 +1,16 @@
 <template>
   <div class="events">
     <h1> Events </h1>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-<EventDetails v-for="event in events" :event="event" :key="event.id"/>
+<EventDetails 
+v-for="event in events" :event="event" :key="event.id"
+:location='event.location'
+:price="event.price"
+:artist="event.name"
+:dateDay="event.date.day"
+:dateMonth="event.date.month"
+:timeStart="event.date.time.start"
+:timeEnd="event.date.time.end"
+/>
   </div>
 </template>
 
@@ -16,17 +24,19 @@ export default {
   components: {
      EventDetails
   },
+
   methods: {
     ...mapActions(["getEvents"])
   },
   computed:{
       events(){
+        console.log(this.$store.state.events)
           return this.$store.state.events;
+          
       }
   },
   created(){
     this.getEvents()
-    
   }
 }
 </script>
@@ -39,13 +49,21 @@ body, html, :root {
 
 .events {
     height: 100vh;
+    
+
 }
 
 h1 {
     font-family: Sansita One;
     color: #F56B9A;
-    text-align: center;
     padding-top:5%;
+    max-width: 475px;
+    text-align: center;
+}
+
+body {
+  background:#231F42;
+
 }
 
 * {
