@@ -10,10 +10,14 @@ export default new Vuex.Store({
     events: [],
     boughtTicket: {},
     ticketVerify: null,
+    loading: false,
   },
   mutations: {
     getEvents(state, data) {
       state.events = data;
+    },
+    createEvent(state) {
+      state.loading = false;
     },
     changeEvent(state, event) {
       state.event = event;
@@ -29,16 +33,12 @@ export default new Vuex.Store({
   actions: {
     async getEvents(context) {
       const data = await API.fetchEvents();
-      console.log(data);
       context.commit("getEvents", data);
     },
-    async createEvent(data, newEvent) {
-      try {
-        await API.addNewEvent("http://localhost:3000/events", newEvent);
-        data.dispatch("getEvents");
-      } catch (err) {
-        console.error(err);
-      }
+    async createEvent(context, newEvent) {
+      this.state.loading = true;
+      await API.addNewEvent(newEvent);
+      context.commit("createEvent");
     },
     async buyTicket(context, event) {
       const data = await API.buyTicket(event);

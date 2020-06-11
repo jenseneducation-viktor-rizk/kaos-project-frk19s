@@ -14,34 +14,37 @@
           type="text"
           class="wide"
           placeholder="Where"
-          v-model="newEvent.place"
+          v-model="newEvent.location"
         />
         <input
           type="text"
+          onfocus="(this.type='date')"
           class="wide"
           placeholder="Date"
-          v-model="newEvent.date"
+          v-model="date"
         />
       </div>
 
       <div class="inputQuad">
         <input
           type="text"
+          onfocus="(this.type='time')"
           class="half"
           placeholder="From Time"
-          v-model="newEvent.startTime"
+          v-model="newEvent.start"
         />
         <input
           type="text"
+          onfocus="(this.type='time')"
           class="half"
           placeholder="To Time"
-          v-model="newEvent.endTime"
+          v-model="newEvent.end"
         />
         <input
           type="number"
           class="half"
           placeholder="Tickets"
-          v-model="newEvent.tickets.spots"
+          v-model="newEvent.total"
         />
         <input
           type="number"
@@ -51,7 +54,8 @@
         />
       </div>
 
-      <button>Add the event</button>
+      <button @click="createEvent">Add the event</button>
+      <p class="error-text" v-show="!valid">Please fill in the blanks</p>
     </div>
   </div>
 </template>
@@ -60,37 +64,43 @@ export default {
   name: "Form",
   data() {
     return {
+      date: "",
       newEvent: {
         name: "",
-        place: "",
-        price: Number,
-        date: "",
-        // date: {
-        //   date: "",
-        //   month: "",
-        // },
-        startTime: "",
-        endTime: "",
-        tickets: {
-          spots: Number,
-          sold: 0,
-        },
+        price: "",
+        location: "",
+        day: "",
+        month: "",
+        start: "",
+        end: "",
+        total: "",
       },
+      valid: true,
     };
-  },
-  computed: {
-    events() {
-      return this.$store.state.events;
-    },
   },
   methods: {
     async createEvent() {
-      this.$store.dispatch("createEvent", this.newEvent);
-      this.$store.dispatch("getEvents");
+      if (this.date != "") {
+        var format = { month: "short", day: "numeric" };
+        let date = new Date(this.date).toLocaleDateString("en-US", format);
+        this.newEvent.month = date.replace(/[^A-Z, a-z]/g, "").slice(0, -1);
+        this.newEvent.day = date.replace(/[^0-9]/g, "");
+        if (
+          (this.newEvent.name != "") &
+          (this.newEvent.location != "") &
+          (this.newEvent.start != "") &
+          (this.newEvent.end != "")
+        ) {
+          this.$store.dispatch("createEvent", this.newEvent);
+          this.$store.dispatch("getEvents");
+          this.valid = true;
+        } else {
+          this.valid = false;
+        }
+      } else {
+        this.valid = false;
+      }
     },
-  },
-  beforeMount() {
-    this.$store.dispatch("getEvents");
   },
 };
 </script>
@@ -115,18 +125,18 @@ export default {
       font-family: Fira Sans;
       font-style: normal;
       font-weight: bold;
-      margin:0 0 10px;
+      margin: 0 0 10px;
     }
 
-    input{
+    input {
       padding: 0 14px;
       color: white;
     }
 
     input::placeholder {
-    color: #a7a7a7;
-    font-weight: 200;
-    font-size: 12px;
+      color: #a7a7a7;
+      font-weight: 200;
+      font-size: 12px;
     }
 
     .inputWide {
@@ -164,11 +174,11 @@ export default {
           margin-right: 0;
         }
       }
-       .half::placeholder {
-          font-family: Fira Sans;
-          font-style: normal;
-          font-weight: 400;
-        }
+      .half::placeholder {
+        font-family: Fira Sans;
+        font-style: normal;
+        font-weight: 400;
+      }
     }
     button {
       height: 40px;
@@ -179,6 +189,12 @@ export default {
       border-style: none;
       margin-top: 16px;
       font-weight: 600;
+      font-size: 14px;
+    }
+
+    .error-text {
+      color: red;
+      margin: 8px 0 0;
       font-size: 14px;
     }
   }
