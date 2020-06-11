@@ -43,12 +43,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
 @import "@/scss/main.scss";
 
 body {
-  //background: #e5e5e5;
   margin: auto;
+  text-align: center;
 }
 .Staff {
   background: $orange;
@@ -67,7 +67,6 @@ body {
 }
 #staff-text-1 {
   font-size: 20px;
-  //font-family: "Sansita", sans-serif;
 }
 #staff-text-2 {
   font-size: 22px;
