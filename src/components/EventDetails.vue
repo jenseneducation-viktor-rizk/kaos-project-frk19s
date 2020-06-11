@@ -47,6 +47,7 @@ export default {
     padding: 2%;
     width: 70%;
     border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
 }
 
 .box {
@@ -55,7 +56,8 @@ export default {
     justify-content: center;
     align-items: center;
     border: solid 2px #ffF;
-    flex-direction: column;    
+    flex-direction: column;
+    cursor: pointer;
 }
 
 .price {

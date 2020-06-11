@@ -421,7 +421,7 @@
         "total": 300,
         "sold": 125
       },
-      "ticketNr": "d0907805-2e8c-4bec-8969-2232f334603b"
+      "ticketNr": "e4a51f05-8d93-4cdf-892d-8d91e6abb1a1"
     },
     {
       "id": 2,
@@ -440,7 +440,7 @@
         "total": 100,
         "sold": 19
       },
-      "ticketNr": "f1cdf03a-ebc6-4edc-a198-1a9d0629cff2"
+      "ticketNr": "45e5e98f-a698-47be-b690-cf14859a5f7b"
     },
     {
       "id": 4,
@@ -459,26 +459,45 @@
         "total": 120,
         "sold": 77
       },
-      "ticketNr": "a2ecd325-e48c-40f0-b4c2-ba1ef51c6d64"
+      "ticketNr": "7daecb77-ae78-43d5-a5c0-a31b47f489ab"
     },
     {
-      "id": 2,
-      "name": "Pelle Trubadur",
-      "price": 110,
-      "location": "Pubelipuben",
+      "id": 1,
+      "name": "Lasse-Stefanz",
+      "price": 350,
+      "location": "Kjell Härnwvistsalen",
       "date": {
         "month": "MAR",
-        "day": "29",
+        "day": "21",
         "time": {
-          "start": "22.00",
-          "end": "00.00"
+          "start": "19.00",
+          "end": "21.00"
         }
       },
       "tickets": {
-        "total": 100,
-        "sold": 19
+        "total": 300,
+        "sold": 125
       },
-      "ticketNr": "f0b52239-5b70-48a5-ba6a-a28ad0238869"
+      "ticketNr": "3ad5f4f4-ae4e-4361-b8c9-2d441faa5586"
+    },
+    {
+      "id": 3,
+      "name": "Kajsas kör",
+      "price": 99,
+      "location": "Götaplatsen",
+      "date": {
+        "month": "APR",
+        "day": "10",
+        "time": {
+          "start": "15.00",
+          "end": "16.00"
+        }
+      },
+      "tickets": {
+        "total": 10000,
+        "sold": 3454
+      },
+      "ticketNr": "3585d721-55a7-496c-8f9e-2ae1ccddbd4c"
     }
   ]
 }
