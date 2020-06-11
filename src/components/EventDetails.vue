@@ -2,16 +2,16 @@
 <main>
   <div class="wrapper" @click="goToBuy(event)">
     <div class="date box">
-      <p>{{dateDay}}</p>
-      <p> {{dateMonth}}</p>
+      <p>{{events.date.day}}</p>
+      <p> {{events.date.month}}</p>
     </div>
     <div class="artist-details">
-      <h2>{{artist}}</h2>
-      <p class="location"> {{location}} </p>
+      <h2>{{events.name}}</h2>
+      <p class="location">{{events.location}} </p>
       <p class="time"> 
-        {{timeStart}} - {{timeEnd}}
+        {{events.date.time.start}} - {{events.date.time.end}}
       </p>
-      <p class="price">{{price}} sek</p>
+      <p class="price">{{events.price}} sek</p>
     </div>
   </div>
 </main>
@@ -20,7 +20,7 @@
 
 export default {
   name: "EventDetails",
-   props:['location', 'price', 'name', 'artist', 'dateDay', 'dateMonth', 'timeStart', 'timeEnd'],
+   props:[ 'events'],
    methods:{
   goToBuy(event){
     this.$store.commit('changeEvent',event)
