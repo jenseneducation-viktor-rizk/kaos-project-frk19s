@@ -54,6 +54,7 @@ export default {
   background-color: $purple;
   height: 100vh;
   width: 100vw;
+  max-width: 100%;
   margin: auto;
   .top {
     margin: 80px 0 0 0;
